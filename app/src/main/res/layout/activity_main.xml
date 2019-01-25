@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/randomNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Random no"/>
+
+
+    <Button
+        android:layout_margin="10dp"
+        android:id="@+id/startService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Service"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stopService"
+        android:layout_margin="10dp"
+        android:text="Stop Service"/>
+
+    <Button
+        android:layout_margin="10dp"
+        android:id="@+id/bindService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bind Service"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/unbindService"
+        android:layout_margin="10dp"
+        android:text="Unbind Service"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/getRandomNo"
+        android:layout_margin="10dp"
+        android:text="Get Random No"/>
+
+
+</LinearLayout>
