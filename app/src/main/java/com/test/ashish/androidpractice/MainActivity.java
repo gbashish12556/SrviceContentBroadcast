@@ -25,13 +25,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private boolean isServiceBound, mStopLoop;
     private Intent serviceIntent;
-    private MyBoundService myBoundService;
+    private MyService myBoundService;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        serviceIntent = new Intent(this, MyBoundService.class);
+        serviceIntent = new Intent(this, MyService.class);
         startServiceButton  = findViewById(R.id.startService);
         startServiceButton.setOnClickListener(this);
 
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 bindService();
                 break;
             case R.id.unbindService:
-                Log.i(TAG,"Unbindin Service");
+                Log.i(TAG,"Unbinding Service");
                 unbindService();
                 break;
             case R.id.getRandomNo:
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 @Override
                 public void onServiceConnected(ComponentName name, IBinder service) {
                     MyBoundService.MyServiceBinder myServiceBinder = (MyBoundService.MyServiceBinder) service;
-                    myBoundService = ((MyBoundService.MyServiceBinder) myServiceBinder).getService();
+//                    myBoundService = ((MyBoundService.MyServiceBinder) myServiceBinder).getService();
                     Log.d(TAG, "Service Bounded");
                     isServiceBound = true;
                 }
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setRandomNo(){
         Log.d("isServiceBound", String.valueOf(isServiceBound));
         if(isServiceBound){
-            randomNoText.setText("Random No: "+myBoundService.getRandomNo());
+//            randomNoText.setText("Random No: "+myBoundService.getRandomNo());
         }else{
             randomNoText.setText("Service Not Bound");
         }
